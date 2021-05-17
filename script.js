@@ -205,7 +205,7 @@ function enterGridHandler() {
     }
   }
   if (lastEndHoverEl.firstElementChild) {
-    if (lastEndHoverEl.firstElementChild.classList.contains("starthover")) {
+    if (lastEndHoverEl.firstElementChild.classList.contains("endhover")) {
       lastEndHoverEl.removeChild(lastEndHoverEl.firstElementChild);
     }
   }
@@ -286,9 +286,10 @@ function enterGridHandler() {
                 event.target.closest(".gridEl").classList.remove("wallnode")
               );
           }
-        enddiv.classList.add("end");
+        event.target.closest(".gridEl").classList.remove("start");
         event.target.closest(".gridEl").classList.remove("wallnode");
-        event.target.closest(".gridEl").appendChild(enddiv);
+        startdiv.classList.add("end");
+        event.target.closest(".gridEl").appendChild(startdiv);
         endnode = false;
       }
     });
