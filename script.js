@@ -322,16 +322,8 @@ function visualise() {
   startnode = false;
   endnode = false;
   wallnode = false;
-  for (g of gridList) {
-    if (g.firstElementChild) {
-      if (g.firstElementChild.classList.contains("start")) {
-        startEl = g;
-      }
-      if (g.firstElementChild.classList.contains("end")) {
-        endEl = g;
-      }
-    }
-  }
+  startEl = document.querySelector(".start").parentElement;
+  endEl = document.querySelector(".end").parentElement;
   for (g of gridList) {
     g.value.gx = calcDistance(
       g.value.xcoord,
